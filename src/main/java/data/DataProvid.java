@@ -17,7 +17,7 @@ public class DataProvid {
     @DataProvider(name = "LoginSucess")
     public static Object[][] loginsucess() {
         return new Object[][] {
-                new Object[] { "18601942313", "123456a" }
+                new Object[] { "AXPC100@ett.com", "1111" }
         };
     }
 

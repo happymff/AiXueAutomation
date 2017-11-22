@@ -93,7 +93,7 @@ public class Initial {
         DesiredCapabilities caps = getCommonCaps(udid);
         //appPackage和appActivity表示你要启动的应用的包名和起始activity
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, appPackage);
-        caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, appActivity);
+       caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, appActivity);
         AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         return driver;
     }
