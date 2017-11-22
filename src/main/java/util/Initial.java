@@ -28,7 +28,9 @@ public class Initial {
         // driver的session超时时间，默认是60秒
         caps.setCapability(NEW_COMMAND_TIMEOUT, "600");
         // automationName表示appium使用的测试引擎，默认是Appium，其实就是uiautomator
-        caps.setCapability(AUTOMATION_NAME, "Appium");
+        // caps.setCapability(AUTOMATION_NAME, "Appium");
+        //调用uiautomator2,获取toast
+        caps.setCapability(AUTOMATION_NAME, "uiautomator2");
         // unicodeKeyboard设置为true表示我们要使用appium自带的输入法，用来支持中文和隐藏键盘，并且将其设置为默认输入法
         caps.setCapability(AndroidMobileCapabilityType.UNICODE_KEYBOARD, true);
         // 在执行测试完成之后，将手机的输入法从appium自带的还原成我手机默认的输入法
@@ -93,7 +95,7 @@ public class Initial {
         DesiredCapabilities caps = getCommonCaps(udid);
         //appPackage和appActivity表示你要启动的应用的包名和起始activity
         caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, appPackage);
-       caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, appActivity);
+        caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, appActivity);
         AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         return driver;
     }

@@ -67,6 +67,29 @@ public class WarningMessage {
             System.out.println("There is no warning message");
             Assert.assertEquals("登录",driver.findElement(By.id("com.etiantian.im:id/title_text")).getText());
         }
+    }
+
+    @Test
+    public void warningDeny() throws Exception {
+        Thread.sleep(3000);
+        swip = new Swip();
+        for (int i = 0; i < 2; i++) {
+            swip.swipToLeft(driver);
+            Thread.sleep(2000);
+        }
+        WelcomePage wp = new WelcomePage(driver);
+        wp.welcomePage();
+        wp.goToLoginpage.click();
+        IsElementPresent isElementPresent = new IsElementPresent();
+        if (isElementPresent.isElementPresent(By.id("com.etiantian.im:id/positiveButton"),driver)) {
+            WarningPage warningPage = new WarningPage(driver);
+            warningPage.warningPage();
+            Assert.assertEquals("检测到关键权限未打开，将影响爱学的正常使用，如应用崩溃，通知收不到等", warningPage.message.getText());
+            warningPage.negativeButton.click();
+        }else {
+            System.out.println("There is no warning message");
+            Assert.assertEquals("登录",driver.findElement(By.id("com.etiantian.im:id/title_text")).getText());
+        }
 
     }
 }
