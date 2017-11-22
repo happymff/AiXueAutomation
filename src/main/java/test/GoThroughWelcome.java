@@ -33,7 +33,7 @@ public class GoThroughWelcome {
 
     @Test
     public void welcomeSwip() throws Exception {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         swip = new Swip();
         for (int i = 0; i < 2; i++) {
             swip.swipToLeft(driver);

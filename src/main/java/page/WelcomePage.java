@@ -14,7 +14,7 @@ public class WelcomePage {
     public WelcomePage(AndroidDriver driver){
         this.driver = driver;
     }
-    public void loginPage(){
+    public void welcomePage(){
         //进入登录页前的按钮
         goToLoginpage = driver.findElement(By.id("com.etiantian.im:id/go_bt"));
     }

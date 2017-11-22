@@ -27,4 +27,13 @@ public class AlertPresent {
             return "No Such Alert Present";
         }
     }
+
+    public void acceptAlert(AndroidDriver driver) {
+        try {
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        } catch (NoAlertPresentException e) {
+            e.printStackTrace();
+        }
+    }
 }
